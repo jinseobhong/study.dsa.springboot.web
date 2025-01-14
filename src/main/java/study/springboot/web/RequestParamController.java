@@ -1,10 +1,11 @@
 package study.springboot.web;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -25,5 +26,12 @@ public class RequestParamController {
     public String requestParameter(@RequestParam String parameter, @RequestParam String parameter2) {
         log.info("Received parameters: { parameter : {} },{ parameter2 : {} }", parameter, parameter2);
         return "parameter: " + parameter + ", parameter2: " + parameter2;
+    }
+
+    // 경로변수(Path Variable)
+    @GetMapping(value = "/{id}")
+    public String pathVariable(@PathVariable(name = "id") Long id) {
+        log.info("id:{}", id);
+        return id.toString();
     }
 }

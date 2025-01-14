@@ -11,10 +11,4 @@ public class IndexController {
     public String index() {
         return "index";
     }
-
-    @GetMapping(path = "spring")
-    public String spring() {
-        return "spring";
-    }
-
 }
