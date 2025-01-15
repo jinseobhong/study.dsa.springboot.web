@@ -1,7 +1,5 @@
 package study.springboot.web;
 
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,14 +14,14 @@ public class RequestParamController {
     // @RequestParam(defaultValue = value) is set default value
     // @RequestParam(required = false) is input null value
     @GetMapping(value = "/requestParameter")
-    public String requestParameter(@RequestParam(defaultValue = "default") String parameter) {
+    public String requestParameter(@RequestParam("parameter") String parameter) {
         log.info("Received parameter: { parameter : {} }", parameter);
         return "parameter: " + parameter;
     }
 
     // Multiple parameters
     @GetMapping(value = "/requestParameters")
-    public String requestParameter(@RequestParam String parameter, @RequestParam String parameter2) {
+    public String requestParameter(@RequestParam("parameter") String parameter, @RequestParam("parameter2") String parameter2) {
         log.info("Received parameters: { parameter : {} },{ parameter2 : {} }", parameter, parameter2);
         return "parameter: " + parameter + ", parameter2: " + parameter2;
     }

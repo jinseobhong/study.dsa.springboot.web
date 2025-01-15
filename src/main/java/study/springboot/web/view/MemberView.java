@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/member/view")
 @Controller
-public class MemberViewController {
+public class MemberView {
     @GetMapping(path = "create")
     public String create() {
         return "member/view/create";

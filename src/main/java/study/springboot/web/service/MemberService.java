@@ -9,8 +9,8 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/member/api")
-public class MemberController {
-    
+public class MemberService {
+
     /**
      * 회원 등록 (Map으로 처리)
      */
@@ -77,4 +77,5 @@ public class MemberController {
                 id, name, gender, email, domain
         );
     }
+
 }

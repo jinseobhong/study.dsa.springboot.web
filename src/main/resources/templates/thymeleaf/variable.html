@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>변수 표현하기</title>
+</head>
+<body>
+<h1>변수를 EL로 표현하기</h1>
+<ul>
+    <li>${userA} <span th:text="${userA}"></span></li>
+    <li>${userA['name']} <span th:text="${userA['name']}"></span></li>
+    <li>${userA.name} <span th:text="${userA.name}"></span></li>
+    <li>${userA.getId()} <span th:text="${userA.getId()}"></span></li>
+</ul>
+<ul>
+    <li>${users} <span th:text="${users}"></span></li>
+    <li>${users[0]['name']} <span th:text="${users[0]['name']}"></span></li>
+    <li>${users[0].name} <span th:text="${users[0].name}"></span></li>
+    <li>${users.get(0).getName()} <span th:text="${users.get(0).getName()}"></span></li>
+</ul>
+<ul>
+    <li>${users2} <span th:text="${users2}"></span></li>
+    <li>${users2['memberA']['name']} <span th:text="${users2['memberA']['name']}"></span></li>
+    <li>${users2['memberA'].name} <span th:text="${users2['memberA'].name}"></span></li>
+    <li>${users2['memberA'].getName()} <span th:text="${users2['memberA'].getName()}"></span></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜 시간 표현</title>
+</head>
+<body>
+<h1>날짜 시간 표현</h1>
+<ul>
+    <li>Default : <span th:text="${now}"></span></li>
+    <li>Format : <span th:text="${#temporals.format(now,'yyyy-MM-dd HH:mm:ss')}"></span></li>
+</ul>
+</body>
+</html>

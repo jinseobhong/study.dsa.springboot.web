@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>URL 링크</title>
+</head>
+<body>
+<h1>URL 링크</h1>
+<ul>
+    <li>param1 : <span th:text="${param1}"></span></li>
+    <li>param2 : <span th:text="${param2}"></span></li>
+    <li><a th:href="@{/}">기본 링크</a></li>
+    <!-- Single parameter -->
+    <li><a th:href="@{/api/requestParameter(parameter='example')}">Send Single Parameter</a></li>
+    <!-- Multiple parameters -->
+    <li><a th:href="@{/api/requestParameters(parameter='value1', parameter2='value2')}">
+        Send Multiple Parameters</a></li>
+    <li><a th:href="@{/api/{id}(id=${path})}">경로 변수</a></li>
+</ul>
+</body>
+</html>
